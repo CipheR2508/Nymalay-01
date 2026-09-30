@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  },
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "no-undef": "error"
+  }
+}
