@@ -145,13 +145,12 @@ The application will be available at:
 6. **RESTful API**: Well-documented endpoints
 7. **Comprehensive Testing**: Backend test suite included
 8. **Docker Ready**: Containerized deployment support
-9. **CI/CD Pipeline**: GitHub Actions workflow configured
-10. **Documentation**: Implementation details and deployment guide
+9. **Documentation**: Implementation details and deployment guide
 
 ## Development Guidelines
 
 - Backend follows FastAPI best practices
-- Frontend uses Next.js 13+ with app router patterns
+- Frontend uses Next.js with app router patterns
 - Styling with Tailwind CSS
 - State management with React hooks
 - API communication via fetch/axios
