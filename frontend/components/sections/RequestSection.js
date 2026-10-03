@@ -1,6 +1,6 @@
 import Link from 'next/link'
+import { MessageCircle } from 'lucide-react'
 import Reveal from '../Reveal'
-import ConsultationRequestForm from '../ConsultationRequestForm'
 import { clinic, approvalCopy } from '../../lib/site'
 import { feeSummary } from '../../lib/consultationRequest'
 import { policyLinks } from '../../lib/policies'
@@ -21,26 +21,21 @@ export default function RequestSection() {
       <div className="shell booking-grid">
         <Reveal className="booking-copy">
           <span className="eyebrow">Consultation request</span>
-          <h2>Request a consultation.</h2>
+          <h2>Talk to the clinic.</h2>
           <p className="lead">
-            All consultations are held online over {clinic.platform}. Fill in a
-            few details and send them to {clinic.doctor.name}, who will review
-            your request and arrange a date and time with you personally.
+            All consultations are held online over {clinic.platform}. Contact
+            {` ${clinic.doctor.name}`} directly on WhatsApp to discuss a
+            consultation.
           </p>
 
           <div className="quick-actions">
             <a
-              className="quick-action"
+              className="btn btn-primary"
               href={clinic.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <strong>Contact on WhatsApp</strong>
-              <span>{clinic.whatsappDisplay}</span>
-            </a>
-            <a className="quick-action" href={`mailto:${clinic.email}`}>
-              <strong>Email us</strong>
-              <span>{clinic.email}</span>
+              <MessageCircle aria-hidden="true" /> Contact on WhatsApp
             </a>
             <div className="quick-action">
               <strong>Availability</strong>
@@ -65,11 +60,15 @@ export default function RequestSection() {
         </Reveal>
 
         <Reveal className="booking-card">
-          <ConsultationRequestForm />
+          <div className="fee-box">
+            <div className="fee-row">
+              <strong>Consultation fee</strong>
+              <strong className="price">{fee.amount}</strong>
+            </div>
+            <p style={{ marginBottom: 12, fontSize: '0.9rem' }}>{fee.detail}</p>
+            <p className="fee-note">{approvalCopy}</p>
+          </div>
 
-          
-          {/* Policies are reachable from the form itself, not only the footer,
-              because this is where a patient is actually deciding. */}
           <nav className="policy-links" aria-label="Clinic policies">
             <p className="eyebrow">Before you request</p>
             <ul>

@@ -24,8 +24,6 @@ export const clinic = {
   whatsappDisplay: '+91 92704 67358',
   whatsappUrl: 'https://wa.me/919270467358',
 
-  email: 'nymalayhomoeopathy@gmail.com',
-
   consultationFeeInr: 700,
   availability: 'Monday–Saturday',
   /** Slots are assigned personally, so there are no hours to publish. */
@@ -123,7 +121,7 @@ export const consultationSteps = [
   },
   {
     title: 'Follow-up',
-    body: 'A later review call to assess your response and adjust if needed. Any change to an agreed slot goes through WhatsApp, or email where WhatsApp is unavailable.',
+    body: 'A later review call to assess your response and adjust if needed. Any change to an agreed slot goes through WhatsApp.',
   },
 ]
 
@@ -146,26 +144,8 @@ export const testimonials = [
 ]
 
 /**
- * A wa.me deep link with a prefilled message.
- *
- * `wa.me` is the documented WhatsApp entry point and works on mobile and
- * desktop, so the same link serves both. It opens a chat with the message
- * already typed but *not sent* — WhatsApp requires the patient to press Send,
- * so nothing here may claim the message has been delivered.
- */
-export function whatsappLink(message) {
-  return `${clinic.whatsappUrl}?text=${encodeURIComponent(message)}`
-}
-
-/** The full clinic address, for `mailto:` links and visible contact details. */
-export const contactEmail = clinic.email
-
-/**
  * Consent, approval and payment wording, kept in one place so no page can
  * quietly imply the website books or confirms anything by itself.
  */
 export const approvalCopy =
-  'Consultations are arranged personally by the doctor. Payment instructions will be shared after a slot is agreed. Your appointment is confirmed after the doctor’s approval and payment verification, through WhatsApp or email where applicable.'
-
-export const privacyNote =
-  'Your form details will be included in the WhatsApp message or email draft you choose to send.'
+  'Consultations are arranged personally by the doctor. Payment instructions will be shared through WhatsApp after a slot is agreed. Your appointment is confirmed after the doctor’s approval and payment verification.'

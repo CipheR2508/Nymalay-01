@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { MessageCircle } from 'lucide-react'
 import Layout from '../components/Layout'
 import Reveal from '../components/Reveal'
 import { clinic } from '../lib/site'
@@ -12,7 +13,7 @@ export default function Contact() {
         <title>Contact</title>
         <meta
           name="description"
-          content={`Contact ${clinic.name} on WhatsApp or email to request an online homoeopathic consultation with ${clinic.doctor.name}.`}
+          content={`Contact ${clinic.name} on WhatsApp to request an online homoeopathic consultation with ${clinic.doctor.name}.`}
         />
       </Head>
 
@@ -26,27 +27,21 @@ export default function Contact() {
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="shell booking-grid">
           <Reveal className="booking-copy">
-            <h2>WhatsApp is fastest.</h2>
+            <h2>Contact us on WhatsApp.</h2>
             <p className="lead">
-              {clinic.doctor.name} keeps the clinic’s patient conversations, so
-              WhatsApp is the fastest way to reach a real person. Prefer to send
-              a written request first? Fill in the consultation form and choose
-              WhatsApp or email.
+              All clinic communication happens directly through WhatsApp. Send
+              your question or consultation request there and {clinic.doctor.name}{' '}
+              will reply personally.
             </p>
 
             <div className="quick-actions">
               <a
-                className="quick-action"
+                className="btn btn-primary"
                 href={clinic.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <strong>Contact on WhatsApp</strong>
-                <span>{clinic.whatsappDisplay}</span>
-              </a>
-              <a className="quick-action" href={`mailto:${clinic.email}`}>
-                <strong>Email us</strong>
-                <span>{clinic.email}</span>
+                <MessageCircle aria-hidden="true" /> Contact on WhatsApp
               </a>
               <div className="quick-action">
                 <strong>Availability</strong>
@@ -64,18 +59,11 @@ export default function Contact() {
                 <span>{clinic.location}</span>
               </div>
             </div>
-
-            <p className="form-note" style={{ marginTop: 24 }}>
-              <Link href="/booking">Request a consultation</Link> and send your
-              details either way. WhatsApp is the primary channel for confirming
-              your appointment and for any change to your slot; email is used
-              when WhatsApp is not available.
-            </p>
           </Reveal>
 
           <Reveal className="booking-card">
             <h2 style={{ fontSize: '1.6rem', marginBottom: 8 }}>
-              Requesting a consultation
+              Discuss a consultation
             </h2>
             <p className="lead" style={{ fontSize: '1.02rem' }}>
               {clinic.doctor.name} reviews every request personally and assigns
@@ -83,16 +71,13 @@ export default function Contact() {
             </p>
 
             <div className="hero-actions" style={{ marginTop: 24 }}>
-              <Link className="btn btn-primary" href="/booking">
-                Request a consultation
-              </Link>
               <a
-                className="btn btn-secondary"
+                className="btn btn-primary"
                 href={clinic.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Contact on WhatsApp
+                <MessageCircle aria-hidden="true" /> Contact on WhatsApp
               </a>
             </div>
 

@@ -1,6 +1,6 @@
 # Nymalay Clinic - Full Stack Application
 
-A modern healthcare clinic management system built with Next.js (frontend) and FastAPI (backend).
+A clinic website and management backend built with a statically exported Next.js frontend and FastAPI backend.
 
 ## Project Structure
 
@@ -66,12 +66,10 @@ nymalaya-fullstack/
 
 ### Frontend (Next.js)
 - Modern, responsive UI with Tailwind CSS
-- Server-side rendering for better performance
-- Appointment booking interface
-- Patient registration forms
+- Static HTML export for Cloudflare Pages
+- Direct WhatsApp contact for consultation requests and clinic communication
 - Clinic information display
 - Nymalay branding with custom favicon
-- TypeScript support
 - Optimized asset loading
 
 ## Setup Instructions
@@ -100,10 +98,10 @@ npm install
 Copy the example environment files:
 ```bash
 cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env
 ```
 
-Edit `.env` files as needed for your environment.
+The public frontend needs no environment variables. Edit the backend `.env`
+only for local backend development.
 
 ### Database Initialization
 ```bash
@@ -138,7 +136,7 @@ The application will be available at:
 ## Key Features Implemented
 
 1. **Branding**: Nymalay logo appears as favicon in browser tab
-2. **Clean UI**: Removed consultation fee display from request section
+2. **Direct contact**: Consultation requests and clinic communication go through WhatsApp
 3. **Optimized Assets**: Extracted and optimized images from design prototype
 4. **Responsive Design**: Mobile-friendly interface
 5. **Secure Authentication**: JWT-based auth system
@@ -150,11 +148,11 @@ The application will be available at:
 ## Development Guidelines
 
 - Backend follows FastAPI best practices
-- Frontend uses Next.js with app router patterns
+- Frontend uses Next.js Pages Router and static export
 - Styling with Tailwind CSS
 - State management with React hooks
-- API communication via fetch/axios
-- TypeScript for frontend components
+- Public frontend pages make no backend/API calls
+- WhatsApp opens a direct chat without a prefilled message or form data
 - Python type hints for backend
 
 ## License

@@ -2,6 +2,7 @@ import { readFileSync, readdirSync, statSync } from 'node:fs'
 import { join, relative, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
+import { directWhatsappUrl } from '../lib/contact'
 import { policies, policyLinks } from '../lib/policies'
 import { clinic } from '../lib/site'
 
@@ -70,7 +71,36 @@ describe('the public tree', () => {
 
   it('never references an API URL or the booking client', () => {
     const offenders = sources.filter((file) =>
-      /NEXT_PUBLIC_API_URL|localhost:8000|lib\/api|lib-api/.test(codeOf(file.text)),
+      /NEXT_PUBLIC_API_URL|localhost:8000|127\.0\.0\.1:8000|lib[\\/]api|lib-api|\bfetch\s*\(|\baxios\b|\/api\//i.test(
+        codeOf(file.text),
+      ),
+    )
+
+    expect(offenders.map((file) => file.path)).toEqual([])
+  })
+
+  it('keeps WhatsApp as a direct clinic link with no message or form data', () => {
+    const offenders = sources.filter((file) =>
+      /whatsappHandoffUrl|whatsappLink|\?text=/.test(codeOf(file.text)),
+    )
+
+    expect(offenders.map((file) => file.path)).toEqual([])
+    expect(directWhatsappUrl()).toBe(`https://wa.me/${clinic.whatsappNumber}`)
+  })
+
+  it('does not render a fixed mobile WhatsApp bar', () => {
+    const offenders = sources.filter((file) =>
+      /MobileBar|mobile-bar/.test(codeOf(file.text)),
+    )
+
+    expect(offenders.map((file) => file.path)).toEqual([])
+  })
+
+  it('does not collect consultation details or offer an email-draft flow', () => {
+    const offenders = sources.filter((file) =>
+      /ConsultationRequestForm|emailHandoffUrl|mailto:|email draft/i.test(
+        codeOf(file.text),
+      ),
     )
 
     expect(offenders.map((file) => file.path)).toEqual([])
@@ -114,7 +144,7 @@ describe('the public tree', () => {
   })
 
   it('does not claim a request was received or confirmed', () => {
-    // Opening a draft proves nothing, so no page may state otherwise. The one
+    // Opening a chat proves nothing, so no page may state otherwise. The one
     // legitimate mention of the phrase is in a comment explaining why the site
     // never uses it, so this scans code rather than prose.
     const offenders = sources.filter((file) =>
@@ -147,8 +177,8 @@ describe('the public tree', () => {
   })
 
   it('keeps the real contact details, not a placeholder', () => {
-    expect(clinic.email).toBe('nymalayhomoeopathy@gmail.com')
     expect(clinic.whatsappNumber).toMatch(/^\d{10,15}$/)
+    expect(clinic.whatsappUrl).toBe(`https://wa.me/${clinic.whatsappNumber}`)
     // No stale example.com / care@ address from the earlier version.
     expect(sources.filter((file) => /care@nymalay/.test(file.text))).toEqual([])
   })

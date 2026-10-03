@@ -62,9 +62,15 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/booking" className="nav-cta" onClick={() => setOpen(false)}>
-            Request a consultation
-          </Link>
+          <a
+            href={clinic.whatsappUrl}
+            className="nav-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+          >
+            Contact on WhatsApp
+          </a>
         </nav>
 
         <button

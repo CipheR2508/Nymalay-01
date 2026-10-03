@@ -53,9 +53,6 @@ export default function Footer() {
                 {clinic.whatsappDisplay}
               </a>
               <br />
-              Email:{' '}
-              <a href={`mailto:${clinic.email}`}>{clinic.email}</a>
-              <br />
               Online consultations · {clinic.availability}
             </p>
           </div>

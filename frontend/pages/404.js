@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import { clinic, whatsappLink } from '../lib/site'
+import { clinic } from '../lib/site'
 
 export default function NotFound() {
   return (
@@ -28,7 +28,7 @@ export default function NotFound() {
             </Link>
             <a
               className="btn btn-secondary"
-              href={whatsappLink(`Hello ${clinic.name}, I could not find a page on your website.`)}
+              href={clinic.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

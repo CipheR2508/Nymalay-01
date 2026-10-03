@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import Reveal from '../Reveal'
 import { clinic } from '../../lib/site'
 
@@ -21,10 +21,14 @@ export default function HeroSection() {
             proper case history. Consultations are online, wherever you are.
           </Reveal>
           <Reveal className="hero-actions">
-            <Link className="btn btn-primary" href="/booking">
-              Request a consultation
-              <ArrowRight aria-hidden="true" />
-            </Link>
+            <a
+              className="btn btn-primary"
+              href={clinic.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle aria-hidden="true" /> Contact on WhatsApp
+            </a>
             <Link className="btn btn-secondary" href="/services">
               Our approach
             </Link>

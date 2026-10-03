@@ -34,7 +34,7 @@ export const cancellationPolicy = {
     'Cancellation at least 24 hours before the appointment: eligible for a 100% refund of the consultation fee.',
     'Cancellation less than 24 hours before the appointment: consultation fee is non-refundable; patients may request rescheduling, subject to availability.',
     'Missed appointment without advance notice: no refund; the patient may request rescheduling, subject to availability.',
-    'Patient-requested changes are allowed once and must be requested through WhatsApp, or email when WhatsApp is unavailable.',
+    'Patient-requested changes are allowed once and must be requested through WhatsApp.',
     'If the clinic cancels or becomes unavailable, the patient may choose another available slot or receive a full refund of the consultation fee.',
   ],
   /*

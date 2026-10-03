@@ -9,7 +9,7 @@ import { policyLinks } from '../lib/policies'
 const FAQ = [
   {
     q: 'How do I request a consultation?',
-    a: `Fill in the consultation form and choose “Continue to WhatsApp” or “Email instead”. ${clinic.doctor.name} reviews your request and will contact you to agree a date and time.`,
+    a: `Contact the clinic directly on WhatsApp. ${clinic.doctor.name} reviews every request and will reply to agree a date and time.`,
   },
   {
     q: 'Can I pick my own date and time?',

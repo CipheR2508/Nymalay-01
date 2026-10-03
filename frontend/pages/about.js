@@ -62,9 +62,14 @@ export default function About() {
           </Reveal>
 
           <Reveal className="hero-actions" style={{ marginTop: 40 }}>
-            <Link className="btn btn-primary" href="/booking">
-              Request a consultation
-            </Link>
+            <a
+              className="btn btn-primary"
+              href={clinic.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact on WhatsApp
+            </a>
             <Link className="btn btn-secondary" href="/services">
               Our approach
             </Link>

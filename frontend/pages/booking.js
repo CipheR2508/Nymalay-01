@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { MessageCircle } from 'lucide-react'
 import Layout from '../components/Layout'
 import Reveal from '../components/Reveal'
-import ConsultationRequestForm from '../components/ConsultationRequestForm'
 import { clinic, approvalCopy } from '../lib/site'
 import { feeSummary } from '../lib/consultationRequest'
 import { policyLinks } from '../lib/policies'
@@ -31,25 +31,19 @@ export default function Request() {
         <div className="shell booking-grid">
           <Reveal className="booking-copy">
             <p className="lead">
-              All consultations are held online over {clinic.platform}. Fill in
-              your details below and choose how to send them. {clinic.doctor.name}{' '}
-              will review your request and agree a date and time with you
-              personally.
+              All consultations are held online over {clinic.platform}. Contact
+              {` ${clinic.doctor.name}`} on WhatsApp to discuss a consultation
+              and agree a date and time personally.
             </p>
 
             <div className="quick-actions">
               <a
-                className="quick-action"
+                className="btn btn-primary"
                 href={clinic.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <strong>Contact on WhatsApp</strong>
-                <span>{clinic.whatsappDisplay}</span>
-              </a>
-              <a className="quick-action" href={`mailto:${clinic.email}`}>
-                <strong>Email us</strong>
-                <span>{clinic.email}</span>
+                <MessageCircle aria-hidden="true" /> Contact on WhatsApp
               </a>
               <div className="quick-action">
                 <strong>Scheduling</strong>
@@ -69,23 +63,9 @@ export default function Request() {
                 </span>
               </div>
             </div>
-
-            <p className="form-note" style={{ marginTop: 24 }}>
-              No WhatsApp? Write to{' '}
-              <a
-                href={`mailto:${clinic.email}`}
-                style={{ textDecoration: 'underline' }}
-              >
-                {clinic.email}
-              </a>{' '}
-              with the same details. WhatsApp is the primary channel for
-              confirmation and for any change to your slot.
-            </p>
           </Reveal>
 
           <Reveal className="booking-card">
-            <ConsultationRequestForm />
-
             <div className="fee-box">
               <div className="fee-row">
                 <strong>Consultation fee</strong>
