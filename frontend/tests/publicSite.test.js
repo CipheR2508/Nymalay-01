@@ -96,14 +96,40 @@ describe('the public tree', () => {
     expect(offenders.map((file) => file.path)).toEqual([])
   })
 
-  it('does not collect consultation details or offer an email-draft flow', () => {
+  it('offers direct clinic email links without embedding consultation details', () => {
+    expect(clinic.email).toBe('nymalayhomoeopathy@gmail.com')
+
     const offenders = sources.filter((file) =>
-      /ConsultationRequestForm|emailHandoffUrl|mailto:|email draft/i.test(
+      /ConsultationRequestForm|emailHandoffUrl|email draft|mailto:[^'"`]*[?&](?:name|phone|concern)=/i.test(
         codeOf(file.text),
       ),
     )
 
     expect(offenders.map((file) => file.path)).toEqual([])
+    expect(
+      sources.some((file) =>
+        codeOf(file.text).includes('mailto:${clinic.email}'),
+      ),
+    ).toBe(true)
+  })
+
+  it('keeps the clinic name, email and safety copy visible on the public site', () => {
+    const header = sources.find((file) => file.path === 'components/Header.js')
+    const footer = sources.find((file) => file.path === 'components/Footer.js')
+    const request = sources.find(
+      (file) => file.path === 'components/sections/RequestSection.js',
+    )
+    const styles = sources.find((file) => file.path === 'styles/globals.css')
+
+    expect(header.text).toContain('<span>{clinic.tagline}</span>')
+    expect(styles.text).not.toMatch(
+      /\.brand-copy span\s*\{\s*display:\s*none\s*;/,
+    )
+    expect(footer.text).toContain('Email: {clinic.email}')
+    expect(footer.text).toContain(
+      'Homoeopathic medicines\n          are not a substitute for Emergency or in-person medical care.',
+    )
+    expect(request.text).not.toContain('fee-box')
   })
 
   it('collects no date or time from the patient', () => {

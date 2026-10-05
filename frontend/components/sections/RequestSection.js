@@ -1,21 +1,17 @@
 import Link from 'next/link'
 import { MessageCircle } from 'lucide-react'
 import Reveal from '../Reveal'
-import { clinic, approvalCopy } from '../../lib/site'
-import { feeSummary } from '../../lib/consultationRequest'
+import { clinic } from '../../lib/site'
 import { policyLinks } from '../../lib/policies'
 
 /**
  * The request section, shown on the homepage and on most inner pages.
  *
  * `id="request"` rather than `id="booking"`: the doctor assigns the slot, so
- * this is a request, not a booking. The section states the fee and the
- * approval requirement without ever presenting a payment button or a claim
- * that an appointment exists.
+ * this is a request, not a booking. The section never presents a payment
+ * button or a claim that an appointment exists.
  */
 export default function RequestSection() {
-  const fee = feeSummary()
-
   return (
     <section className="booking" id="request">
       <div className="shell booking-grid">
@@ -36,6 +32,9 @@ export default function RequestSection() {
               rel="noopener noreferrer"
             >
               <MessageCircle aria-hidden="true" /> Contact on WhatsApp
+            </a>
+            <a className="btn btn-secondary" href={`mailto:${clinic.email}`}>
+              Email the clinic
             </a>
             <div className="quick-action">
               <strong>Availability</strong>
@@ -60,15 +59,6 @@ export default function RequestSection() {
         </Reveal>
 
         <Reveal className="booking-card">
-          <div className="fee-box">
-            <div className="fee-row">
-              <strong>Consultation fee</strong>
-              <strong className="price">{fee.amount}</strong>
-            </div>
-            <p style={{ marginBottom: 12, fontSize: '0.9rem' }}>{fee.detail}</p>
-            <p className="fee-note">{approvalCopy}</p>
-          </div>
-
           <nav className="policy-links" aria-label="Clinic policies">
             <p className="eyebrow">Before you request</p>
             <ul>

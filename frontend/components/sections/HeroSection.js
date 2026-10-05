@@ -29,6 +29,9 @@ export default function HeroSection() {
             >
               <MessageCircle aria-hidden="true" /> Contact on WhatsApp
             </a>
+            <a className="btn btn-secondary" href={`mailto:${clinic.email}`}>
+              Email the clinic
+            </a>
             <Link className="btn btn-secondary" href="/services">
               Our approach
             </Link>

@@ -18,6 +18,7 @@ export const clinic = {
   tagline: 'Homoeopathic Clinic',
   description:
     'Individualised online homoeopathic consultations with Dr. Arya Nerli.',
+  email: 'nymalayhomoeopathy@gmail.com',
 
   // E.164 without the leading +, which is the form wa.me expects.
   whatsappNumber: '919270467358',

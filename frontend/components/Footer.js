@@ -55,13 +55,13 @@ export default function Footer() {
               <br />
               Online consultations · {clinic.availability}
             </p>
+            <p>Email: {clinic.email}</p>
           </div>
         </div>
 
         <p className="copyright">
-          © {new Date().getFullYear()} {clinic.name}. Homoeopathy is a
-          complementary therapy and is not a substitute for emergency or
-          in-person medical care.
+          © {new Date().getFullYear()} {clinic.name}. Homoeopathic medicines
+          are not a substitute for Emergency or in-person medical care.
         </p>
       </div>
     </footer>

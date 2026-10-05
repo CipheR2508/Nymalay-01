@@ -1125,10 +1125,6 @@
     width: min(calc(100% - 26px), var(--max));
   }
 
-  .brand-copy span {
-    display: none;
-  }
-
   .nav {
     height: 70px;
   }
