@@ -211,6 +211,12 @@ describe('the public tree', () => {
 })
 
 describe('clinic facts', () => {
+  it('uses the requested Nyalay Homoeopathy brand', () => {
+    expect(clinic.name).toBe('Nyalay Homoeopathy')
+    expect(clinic.shortName).toBe('Nyalay')
+    expect(clinic.tagline).toBe('Homoeopathy')
+  })
+
   it('carries only the facts the plan supplied', () => {
     expect(clinic.consultationFeeInr).toBe(700)
     expect(clinic.availability).toBe('Monday–Saturday')

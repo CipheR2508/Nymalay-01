@@ -13,11 +13,11 @@
  */
 
 export const clinic = {
-  name: 'Nymalay Homoeopathic Clinic',
-  shortName: 'Nymalay',
-  tagline: 'Homoeopathic Clinic',
+  name: 'Nyalay Homoeopathy',
+  shortName: 'Nyalay',
+  tagline: 'Homoeopathy',
   description:
-    'Individualised online homoeopathic consultations with Dr. Arya Nerli.',
+    'Individualised online homoeopathy consultations with Dr. Arya Nerli.',
   email: 'nymalayhomoeopathy@gmail.com',
 
   // E.164 without the leading +, which is the form wa.me expects.

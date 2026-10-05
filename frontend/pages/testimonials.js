@@ -11,7 +11,7 @@ export default function Testimonials() {
         <title>Testimonials</title>
         <meta
           name="description"
-          content="What patients say about consultations at Nymalay Homoeopathic Clinic."
+          content="What patients say about consultations at Nyalay Homoeopathy."
         />
       </Head>
 

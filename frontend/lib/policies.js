@@ -15,7 +15,7 @@ export const consultationPolicy = {
   title: 'Consultation Policy',
   summary: 'What a consultation involves, how long it takes, and what it costs.',
   paragraphs: [
-    'Nymalay Homoeopathic Clinic consultations follow an individualised approach. The consultation involves a detailed understanding of the patient’s presenting concerns, medical history, symptoms, lifestyle, previous treatment, and relevant investigation reports.',
+    'Nyalay Homoeopathy consultations follow an individualised approach. The consultation involves a detailed understanding of the patient’s presenting concerns, medical history, symptoms, lifestyle, previous treatment, and relevant investigation reports.',
     'Each consultation has a minimum duration of 60 minutes. The actual duration may vary depending on case complexity and the information required. Patients should keep relevant medical reports, prescriptions, and medication details available during consultation.',
     'The consultation fee is ₹700, charged once, and covers professional consultation and clinical assessment. Medicine and courier charges are separate. Medicine charges vary according to the case, medicines required, quantity, and treatment duration; applicable charges will be communicated separately.',
     'Online consultations are subject to the limitations of remote healthcare. Certain conditions may require physical examination, additional investigations, or an in-person consultation.',

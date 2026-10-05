@@ -13,7 +13,7 @@ export default function Services() {
         <title>Services</title>
         <meta
           name="description"
-          content="How Nymalay Homoeopathic Clinic works, and the conditions we commonly treat."
+          content="How Nyalay Homoeopathy works, and the conditions we commonly treat."
         />
       </Head>
 
