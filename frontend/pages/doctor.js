@@ -10,7 +10,7 @@ export default function Doctor() {
         <title>Doctor</title>
         <meta
           name="description"
-          content="Dr. Arya Nerli, BHMS — consulting homoeopath at Nyalay Homoeopathy."
+          content="Dr. Arya Nerli, BHMS — consulting homoeopath at Nymalay Homoeopathy."
         />
       </Head>
 

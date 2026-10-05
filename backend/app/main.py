@@ -1,4 +1,4 @@
-"""Nymalay Homoeopathic Clinic API.
+"""Nymalay Homoeopathy API.
 
 Status
 ------
@@ -90,10 +90,10 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(
-    title="Nymalay Homoeopathic Clinic API",
+    title="Nymalay Homoeopathy API",
     description=(
         "API for managing patient appointments, booking requests and records "
-        "for Nymalay Homoeopathic Clinic."
+        "for Nymalay Homoeopathy."
     ),
     version="1.0.0",
     lifespan=lifespan,

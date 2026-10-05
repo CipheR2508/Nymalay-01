@@ -13,8 +13,8 @@
  */
 
 export const clinic = {
-  name: 'Nyalay Homoeopathy',
-  shortName: 'Nyalay',
+  name: 'Nymalay Homoeopathy',
+  shortName: 'Nymalay',
   tagline: 'Homoeopathy',
   description:
     'Individualised online homoeopathy consultations with Dr. Arya Nerli.',

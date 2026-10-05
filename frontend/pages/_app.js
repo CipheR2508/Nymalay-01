@@ -3,14 +3,14 @@ import '../styles/globals.css'
 export const metadata = {
   metadataBase: new URL('https://nymalay.clinic'),
   title: {
-    default: 'Nyalay Homoeopathy',
-    template: '%s | Nyalay Homoeopathy',
+    default: 'Nymalay Homoeopathy',
+    template: '%s | Nymalay Homoeopathy',
   },
   description:
-    'Nyalay Homoeopathy — individualised online homoeopathy consultations with Dr. Arya Nerli.',
+    'Nymalay Homoeopathy — individualised online homoeopathy consultations with Dr. Arya Nerli.',
   themeColor: '#F6F2EA',
   openGraph: {
-    title: 'Nyalay Homoeopathy',
+    title: 'Nymalay Homoeopathy',
     description:
       'Individualised online homoeopathic consultations with Dr. Arya Nerli.',
     type: 'website',
