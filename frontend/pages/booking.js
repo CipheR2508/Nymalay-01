@@ -4,12 +4,9 @@ import { MessageCircle } from 'lucide-react'
 import Layout from '../components/Layout'
 import Reveal from '../components/Reveal'
 import { clinic, approvalCopy } from '../lib/site'
-import { feeSummary } from '../lib/consultationRequest'
 import { policyLinks } from '../lib/policies'
 
 export default function Request() {
-  const fee = feeSummary()
-
   return (
     <Layout>
       <Head>
@@ -66,15 +63,7 @@ export default function Request() {
           </Reveal>
 
           <Reveal className="booking-card">
-            <div className="fee-box">
-              <div className="fee-row">
-                <strong>Consultation fee</strong>
-                <strong className="price">{fee.amount}</strong>
-              </div>
-              <p style={{ marginBottom: 12, fontSize: '0.9rem' }}>{fee.detail}</p>
-              <p className="fee-note">{approvalCopy}</p>
-            </div>
-
+            <p className="lead">{approvalCopy}</p>
             <nav className="policy-links" aria-label="Clinic policies">
               <p className="eyebrow">Before you request</p>
               <ul>

@@ -25,7 +25,6 @@ export const clinic = {
   whatsappDisplay: '+91 92704 67358',
   whatsappUrl: 'https://wa.me/919270467358',
 
-  consultationFeeInr: 700,
   availability: 'Monday–Saturday',
   /** Slots are assigned personally, so there are no hours to publish. */
   scheduling: 'Date and time are personally assigned and agreed by the doctor',
@@ -145,8 +144,8 @@ export const testimonials = [
 ]
 
 /**
- * Consent, approval and payment wording, kept in one place so no page can
+ * Consent and approval wording, kept in one place so no page can
  * quietly imply the website books or confirms anything by itself.
  */
 export const approvalCopy =
-  'Consultations are arranged personally by the doctor. Payment instructions will be shared through WhatsApp after a slot is agreed. Your appointment is confirmed after the doctor’s approval and payment verification.'
+  'Consultations are arranged personally by the doctor, who reviews and approves every request.'

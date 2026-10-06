@@ -17,7 +17,7 @@ const FAQ = [
   },
   {
     q: 'Is my appointment confirmed automatically?',
-    a: `No. ${clinic.approvalNote}. Payment alone does not confirm an appointment; the doctor confirms it personally after verifying payment.`,
+    a: `No. ${clinic.approvalNote}.`,
   },
   {
     q: 'When are consultations available?',
@@ -30,10 +30,6 @@ const FAQ = [
   {
     q: 'Is it really online?',
     a: `Yes. Consultations happen over ${clinic.platform}. ${clinic.platformNote}.`,
-  },
-  {
-    q: 'What does it cost?',
-    a: `₹${clinic.consultationFeeInr.toLocaleString('en-IN')}, charged once, covering the consultation and clinical assessment. Medicine and courier charges are separate and communicated according to your case. Payment instructions are shared after a slot is agreed.`,
   },
   {
     q: 'What do I need for the first call?',

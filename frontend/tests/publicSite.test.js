@@ -218,7 +218,6 @@ describe('clinic facts', () => {
   })
 
   it('carries only the facts the plan supplied', () => {
-    expect(clinic.consultationFeeInr).toBe(700)
     expect(clinic.availability).toBe('Monday–Saturday')
     expect(clinic.duration).toContain('60')
     expect(clinic.advanceNotice).toContain('3 hours')
@@ -234,6 +233,16 @@ describe('clinic facts', () => {
 
   it('states that the doctor approves every request', () => {
     expect(clinic.approvalNote).toMatch(/approval/i)
+  })
+
+  it('does not publish consultation fee or payment details', () => {
+    expect(
+      sources.filter((file) =>
+        /consultation fee|₹\s?\d+|payment instructions|payment verification|what does it cost/i.test(
+          file.text,
+        ),
+      ),
+    ).toEqual([])
   })
 })
 
